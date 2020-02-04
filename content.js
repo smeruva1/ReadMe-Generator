@@ -1,15 +1,16 @@
-# ReadMe Generator
+README_header = 
+`# ReadMe Generator
 
 ## Description
 
-## 
-        
+## `
+	"---------"
+        "${response.project} "
+        "${response.description}"
         "---------"
-        Prj title 
-        Prj desc
-        "---------"
-        
-        Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
+
+README_desc = 
+`Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
 
 The goal is to generate a decent ReadMe file and push it to github.
 
@@ -17,9 +18,16 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 
 ## Credit
 
-REPO Username: "smeruva1"
-        email = meruva_s@yahoo.com
-        Profile pic = "https://avatars3.githubusercontent.com/u/57336110?v=4"## Motivation
+REPO Username: `
+
+	"---------"
+       " ${response.username} "
+        "${response.email}"
+        "image"
+        "---------"
+
+README_credit = 
+`## Motivation
 
 The motivation is to write code to create the file dynamically and not type it manually. 
 
@@ -48,24 +56,29 @@ README files are a quick and simple way for other users to learn more about your
 
 It’s a good idea to at least have a README on your project, because it’s the first thing many people will read when they first find your work.
 
-## Installation
-        
+## Installation`
+
+	"---------"
+       " ${response.install} "
         "---------"
-        install prj
-        "---------"
-        
-        package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
+
+README_install = 
+
+`package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
 
 npm init
 npm install inquirer axios
 
-## Usage
-        
+## Usage`
+
+	    "---------"
+        "${response.usage} "
         "---------"
-        use prj
-        "---------"
-        
-        Once you have cloned the REPO and installed dependencies - two npm javaScript liberaries - inquirer axios, run the node application by using above command in gitbash once you are in the directory.
+
+
+README_Usage = 
+
+`Once you have cloned the REPO and installed dependencies - two npm javaScript liberaries - inquirer axios, run the node application by using above command in gitbash once you are in the directory.
 
 It will ask you github username to perform a GET request to retrieve user's profile image and email. 
 
@@ -73,10 +86,39 @@ User will be prompted with series of questions and the answers will be used to g
 
 ## License
 
+`
 
-        
+	    "---------"
+       " ${response.license} "
         "---------"
-        GNU GPLv3
+
+
+README_License = `
+
+## Badges
+
+`
+
+	"---------"
+        "...badges..."
         "---------"
-        
-        
+
+
+README_Badge = `
+
+## Contributing
+
+Feel free to clone the REPO and contribute.
+
+## Tests
+
+The application performs input validations for email and lenghts`
+
+exports.README_header;
+exports.README_desc;
+exports.README_credit;
+exports.README_install;
+exports.README_Usage;
+exports.README_License;
+exports.README_Badge;
+

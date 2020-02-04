@@ -1,7 +1,9 @@
 const axios = require('axios');
 const inquirer = require('inquirer');
-const writeFile = require('./file-util');
-
+//const writeFile = require('./file-util');
+const fs = require('fs');
+const content = require('./content');
+var promptResponseObj;
 
 inquirer
     .prompt([
@@ -14,66 +16,147 @@ inquirer
         },
         {
             type: "input",
-            message: "Describe your project?",
-            name: "project",
-            defaul: 'create README file',
-            validate: (ans) => ans.length >= 5
-        },
-        {
-            type: "checkbox",
-            message: "What Technologies did you use?",
-            name: "Technologies",
-            choices: [
-                "Node",
-                "npm",
-                "JSON",
-                "Markdown"
-            ]
-        },
-        {
-            type: "list",
-            message: "Which JavaScript Liberaries are you using?",
-            name: "Library",
-            choices: [
-                "File System",
-                "inquirer",
-                "axios"
-            ]
-
-        },
-        {
-            type: 'number',
-            message: 'How many Projects have your completed last year?',
-            name: 'noOfPrjs',
-            validate: function (prjnum) {
-                if (prjnum > 0 && prjnum < 50) {
+            message: "Enter your email address",
+            name: "email",
+            validate: function (email) {
+                if (email.includes('@') && email.includes('.')) {
                     return true;
                 } else {
-                    console.log('Enter a valid project count between 0 and 50');
+                    console.log('Enter a valid email address');
                 }
 
             }
         }
+        ,
+        {
+            type: "input",
+            message: "Enter your Project title",
+            name: "project",
+            defaul: 'create README file',
+            validate: (ans) => ans.length >= 2
+        },
+        {
+            type: "input",
+            message: "Describe your project",
+            name: "description",
+            validate: (ans) => ans.length >= 5
+        },
+        {
+            type: "input",
+            message: "How do i install it?",
+            name: "install"
+        },
+        {
+            type: "input",
+            message: "How do i use it?",
+            name: "usage",
+            validate: (ans) => ans.length >= 5
+        },
+        {
+            type: "list",
+            message: "Select type of license: ",
+            name: "license",
+            choices: ['Apache License 2.0', 'GNU GPLv3', 'MIT', 'ISC']
+        }
 
     ]
     )
-    .then(({ username }) => {
-        const queryURL = `https://api.github.com/users/${username}`;
+    .then(function (promtResponse) {
+        console.log(promtResponse);
+
+        //Combine user inputs and other Readme content
+        var readmetext =
+            README_header + `
+        
+        "---------"
+        ${promtResponse.project} 
+        ${promtResponse.description}
+        "---------"
+        
+        `+ README_desc;
+
+        fs.writeFile("README.md", readmetext, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+        promptResponseObj = promtResponse;
+        return Promise.resolve(promtResponse);
+    })
+    .then(function (promptResponse) {
+        console.log(promptResponse.username);
+
+        const queryURL = `https://api.github.com/users/${promptResponse.username}`;
+        //return (promptResponse, axios.get(queryURL));
         return axios.get(queryURL);
     })
-    .then(({ data }) => {
+    //.then((promptResponse, githubRresponse) => {
+    .then(githubRresponse => {
 
-        console.log(data);
+        console.log("inside 2 param function");
+        //console.log(githubRresponse.data);
+        //console.log(JSON.stringify(response, null, 2));
+
+        var readmetext2 = JSON.stringify(githubRresponse.data.login)
+            + `
+        `
+            + "email = " + `${promptResponseObj.email}
+        `
+            + "Profile pic = " + JSON.stringify(githubRresponse.data.avatar_url);
+
+        fs.appendFile("README.md", readmetext2, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+
+        //return promptResponse;;
     })
-    // .then(({ data }) => {
-    //     console.log(data.avatar_url);
-    //     console.log(data.email);
-    //     return writeFile('README.md', data.avatar_url);
-    // })
-    .then(res => {
-        //console.log(res);
-        console.log(JSON.stringify(response,null,2));
+    .then(response => {
+
+        console.log("inside 3 param function");
+
+        var readmetext3 = README_credit + `
+        
+        "---------"
+        ${promptResponseObj.install}
+        "---------"
+        
+        `+ README_install + `
+        
+        "---------"
+        ${promptResponseObj.usage}
+        "---------"
+        
+        `+ README_Usage + `
+        
+        "---------"
+        ${promptResponseObj.license}
+        "---------"
+        
+        `
+        "[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT);"
+
+            + README_License + `
+        
+        "---------"
+        "badge"
+        
+        "[![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)](https://travis-ci.org/rstacruz/REPO) "
+        
+        "---------"
+        `+ README_Badge;
+
+        fs.appendFile("README.md", readmetext3, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
     })
+
     .catch(err => {
         console.log(err);
     });
