@@ -2,7 +2,7 @@
 # README GENERATOR
         
 
-## Dynamically create Markdown file
+## Dynamically create Markdown File
                
 Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
 
@@ -79,6 +79,22 @@ User will be prompted with series of questions and the answers will be used to g
 
 
 
->*ISC*
+>*Apache License 2.0*
 
-![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+
+## Badges
+
+
+
+![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)
+
+
+
+## Contributing
+
+Feel free to clone the REPO and contribute.
+
+## Tests
+
+The application performs input validations for email and lenghts

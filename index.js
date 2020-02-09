@@ -175,15 +175,11 @@ ${README_Usage}
             readmetext4 = "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
         }
 
-        //     + README_License + `
+        readmetext4 += `${README_License}
 
-        // "---------"
-        // "badge"
+![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)
 
-        // "[![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)](https://travis-ci.org/rstacruz/REPO) "
-
-        // "---------"
-        // `+ README_Badge;
+${README_Badge}`;
 
         fs.appendFile("README.md", readmetext4, function (err) {
             if (err) {
