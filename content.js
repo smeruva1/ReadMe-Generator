@@ -7,10 +7,6 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 
 ## Credit
 
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-* [License URL's](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
-
 * REPO Username: `;
 
 README_credit = 
@@ -35,7 +31,7 @@ A README is like the face of your project. It is the first file a person should 
 
 This homework/project was very interesting as it not only covered two of the popular npm javaScript liberaries - inquirer and axios but it also challenged us to learn Markdown formatting and generate a ReadMe file dynamically using node filesystem.
 
-##What makes your project stand out?
+## What makes your project stand out?
 
 Good documentation is key to the success of any project. Making documentation accessible enables people to learn about a project; making it easy to update ensures that documentation stays relevant.
 
@@ -43,11 +39,9 @@ README files are a quick and simple way for other users to learn more about your
 
 It’s a good idea to at least have a README on your project, because it’s the first thing many people will read when they first find your work.
 
-## Installation`
+## Installation
 
-	"---------"
-       " ${response.install} "
-        "---------";
+`;
 
 README_install = 
 
@@ -56,11 +50,9 @@ README_install =
 npm init
 npm install inquirer axios
 
-## Usage`
+## Usage
 
-	    "---------"
-        "${response.usage} "
-        "---------";
+`;
 
 
 README_Usage = 
@@ -73,22 +65,14 @@ User will be prompted with series of questions and the answers will be used to g
 
 ## License
 
-`
-
-	    "---------"
-       " ${response.license} "
-        "---------";
+`;
 
 
 README_License = `
 
 ## Badges
 
-`
-
-	"---------"
-        "...badges..."
-        "---------";
+`;
 
 
 README_Badge = `

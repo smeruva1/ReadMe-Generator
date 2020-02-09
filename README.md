@@ -1,8 +1,8 @@
 
-# README Generator
+# README GENERATOR
         
 
-## Dynamically generate Markdown file
+## Dynamically generate Markdwon File
                
 Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
 
@@ -11,10 +11,6 @@ The goal is to generate a decent ReadMe file and push it to github.
 Its interesting to know that Markdown files use non-alphabetic characters like hash or star to style regular text.
 
 ## Credit
-
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-* [License URL's](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
 * REPO Username: smeruva1
             
@@ -28,7 +24,7 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 
 2 [License URL's](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
-## Motivation
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)## Motivation
 
 The motivation is to write code to create the file dynamically and not type it manually. 
 
@@ -49,7 +45,7 @@ A README is like the face of your project. It is the first file a person should 
 
 This homework/project was very interesting as it not only covered two of the popular npm javaScript liberaries - inquirer and axios but it also challenged us to learn Markdown formatting and generate a ReadMe file dynamically using node filesystem.
 
-##What makes your project stand out?
+## What makes your project stand out?
 
 Good documentation is key to the success of any project. Making documentation accessible enables people to learn about a project; making it easy to update ensures that documentation stays relevant.
 
@@ -58,23 +54,22 @@ README files are a quick and simple way for other users to learn more about your
 It’s a good idea to at least have a README on your project, because it’s the first thing many people will read when they first find your work.
 
 ## Installation
+
+ 
+Run npm install for dependencies
         
-        "---------"
-        adfad
-        "---------"
-        
-        package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
+package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
 
 npm init
 npm install inquirer axios
 
 ## Usage
+
+
         
-        "---------"
-        adfadfad
-        "---------"
+Run node install.js
         
-        Once you have cloned the REPO and installed dependencies - two npm javaScript liberaries - inquirer axios, run the node application by using above command in gitbash once you are in the directory.
+Once you have cloned the REPO and installed dependencies - two npm javaScript liberaries - inquirer axios, run the node application by using above command in gitbash once you are in the directory.
 
 It will ask you github username to perform a GET request to retrieve user's profile image and email. 
 
@@ -83,9 +78,7 @@ User will be prompted with series of questions and the answers will be used to g
 ## License
 
 
-        
-        "---------"
-        GNU GPLv3
-        "---------"
 
-        
+>block quote
+MIT
+
