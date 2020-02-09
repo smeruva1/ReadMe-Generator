@@ -176,10 +176,11 @@ ${README_Usage}
             readmetext4 = "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
         }
 
-        readmetext4 += `${README_License}
+        readmetext4 += `## Badges
 
-        ![Build Status](https://travis-ci.com/smeruva1/ReadMe-Generator.svg?branch=master)
-`;
+![Build Status](https://travis-ci.com/smeruva1/ReadMe-Generator.svg?branch=master)
+
+${README_Badge}`;
         
         // ![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)
 
