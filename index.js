@@ -178,19 +178,21 @@ ${README_Usage}
 
         readmetext4 += `${README_License}
 
+![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)
+
 `;
 
 
-const bf = new BadgeFactory()
+// const bf = new BadgeFactory()
 
-const format = {
-  text: ['build', 'passed'],
-  color: 'green',
-  template: 'flat',
-}
+// const format = {
+//   text: ['build', 'passed'],
+//   color: 'green',
+//   template: 'flat',
+// }
 
-const svg = bf.create(format)
-readmetext4 +=svg;
+// const svg = bf.create(format)
+// readmetext4 +=svg;
 
 //${README_Badge}`;
 
