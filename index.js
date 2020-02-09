@@ -64,11 +64,14 @@ inquirer
         //console.log(promptResponse);
 
         //Combine user inputs and other Readme content
-        let readmetext =`# ${promptResponse.project} 
+        let readmetext =`
+# ${promptResponse.project}
         
-        ## ${promptResponse.description}
+----
+
+## ${promptResponse.description}
                
-        `+ README_desc;
+`+ README_desc;
 
         fs.writeFile("README.md", readmetext, function (err) {
             if (err) {

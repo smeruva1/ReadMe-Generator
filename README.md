@@ -1,8 +1,11 @@
-# README Generator 
+
+# README GENERATOR
         
-        ## Dynamically Generate README Markdown file
+----
+
+## Dynamcially generate markdown file
                
-        Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
+Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
 
 The goal is to generate a decent ReadMe file and push it to github.
 
@@ -48,7 +51,7 @@ It’s a good idea to at least have a README on your project, because it’s the
 ## Installation
         
         "---------"
-        afad
+        afdad
         "---------"
         
         package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
@@ -73,7 +76,7 @@ User will be prompted with series of questions and the answers will be used to g
 
         
         "---------"
-        MIT
+        Apache License 2.0
         "---------"
 
-        
+        ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
