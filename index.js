@@ -118,8 +118,10 @@ inquirer
         `
             + "email = " + `${promptData.email}
         `
-            + "Profile pic = " +
-            `![Sudar Meruva](${github.data.avatar_url})`;
+            + "Profile pic" +
+            `
+            ![Sudar Meruva](${github.data.avatar_url})
+            `;
 
         fs.appendFile("README.md", readmetext2, function (err) {
             if (err) {
