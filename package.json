@@ -19,6 +19,7 @@
   "homepage": "https://github.com/smeruva1/ReadMe-Generator#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "gh-badges": "^2.2.1",
     "inquirer": "^7.0.4"
   }
 }
