@@ -64,10 +64,9 @@ inquirer
         //console.log(promptResponse);
 
         //Combine user inputs and other Readme content
-        let readmetext =`
+        let readmetext = `
 # ${promptResponse.project}
         
-----
 
 ## ${promptResponse.description}
                
@@ -111,18 +110,19 @@ inquirer
         //console.log(JSON.stringify(response, null, 2));
 
 
+        let readmetext2 = `${github.data.login}
+            
+* email = ${promptData.email}
+        
+* Profile picture:
 
-        let readmetext2 = JSON.stringify(github.data.login)
-            + `
-        `
-            + "email = " + `${promptData.email}
-        `
-            + "Profile pic" +
-            `
+* ![${github.data.login}](${github.data.avatar_url})
 
-            ![Sudar Meruva](${github.data.avatar_url})
+1 [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
-            `;
+2 [License URL's](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+
+`;
 
         fs.appendFile("README.md", readmetext2, function (err) {
             if (err) {

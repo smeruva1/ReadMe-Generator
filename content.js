@@ -1,14 +1,3 @@
-README_header = 
-`# ReadMe Generator
-
-## Description
-
-## `
-	"---------"
-        "${response.project} "
-        "${response.description}"
-        "---------"
-
 README_desc = 
 `Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
 
@@ -18,13 +7,11 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 
 ## Credit
 
-REPO Username: `
+* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
-	"---------"
-       " ${response.username} "
-        "${response.email}"
-        "image"
-        "---------"
+* [License URL's](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+
+* REPO Username: `;
 
 README_credit = 
 `## Motivation
@@ -60,7 +47,7 @@ It’s a good idea to at least have a README on your project, because it’s the
 
 	"---------"
        " ${response.install} "
-        "---------"
+        "---------";
 
 README_install = 
 
@@ -73,7 +60,7 @@ npm install inquirer axios
 
 	    "---------"
         "${response.usage} "
-        "---------"
+        "---------";
 
 
 README_Usage = 
@@ -90,7 +77,7 @@ User will be prompted with series of questions and the answers will be used to g
 
 	    "---------"
        " ${response.license} "
-        "---------"
+        "---------";
 
 
 README_License = `
@@ -101,7 +88,7 @@ README_License = `
 
 	"---------"
         "...badges..."
-        "---------"
+        "---------";
 
 
 README_Badge = `
@@ -112,9 +99,8 @@ Feel free to clone the REPO and contribute.
 
 ## Tests
 
-The application performs input validations for email and lenghts`
+The application performs input validations for email and lenghts`;
 
-exports.README_header;
 exports.README_desc;
 exports.README_credit;
 exports.README_install;
