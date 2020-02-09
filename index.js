@@ -120,7 +120,9 @@ inquirer
         `
             + "Profile pic" +
             `
+
             ![Sudar Meruva](${github.data.avatar_url})
+
             `;
 
         fs.appendFile("README.md", readmetext2, function (err) {
@@ -153,19 +155,8 @@ inquirer
         "---------"
         ${response.license}
         "---------"
-        
-        `
-        "[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT);"
 
-            + README_License + `
-        
-        "---------"
-        "badge"
-        
-        "[![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)](https://travis-ci.org/rstacruz/REPO) "
-        
-        "---------"
-        `+ README_Badge;
+        `;
 
         fs.appendFile("README.md", readmetext3, function (err) {
             if (err) {
@@ -173,7 +164,33 @@ inquirer
             }
             console.log("Success!");
         });
+
+        return response;
     })
+
+.then(response => {
+
+    var readmetext4 = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+
+
+    //     + README_License + `
+    
+    // "---------"
+    // "badge"
+    
+    // "[![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)](https://travis-ci.org/rstacruz/REPO) "
+    
+    // "---------"
+    // `+ README_Badge;
+
+    fs.appendFile("README.md", readmetext4, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Success!");
+    });
+})
+
 
     .catch(err => {
         console.log(err);
