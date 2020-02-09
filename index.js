@@ -1,6 +1,5 @@
 const axios = require('axios');
 const inquirer = require('inquirer');
-//const writeFile = require('./file-util');
 const fs = require('fs');
 const content = require('./content');
 //const { BadgeFactory } = require('gh-badges')
@@ -97,20 +96,8 @@ inquirer
     //.then((promptResponse, githubRresponse) => {
     .then(githubRresponse => {
 
-
         const { promptData, github } = githubRresponse;
-        // console.log("----------------------");
-        // console.log(githubRresponse);
-        // console.log("----------------------");
-        // console.log(promptData);
-        // console.log("----------------------");
-        // console.log(github);
-
-        // console.log("inside 2 param function");
-        // //console.log(githubRresponse.data);
-        //console.log(JSON.stringify(response, null, 2));
-
-
+        
         let readmetext2 = `*${github.data.login}*
             
 >* email = *${promptData.email}*
@@ -124,7 +111,6 @@ inquirer
 2 [License URL's](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
 
 `;
-
         fs.appendFile("README.md", readmetext2, function (err) {
             if (err) {
                 return console.log(err);
@@ -163,7 +149,6 @@ ${README_Usage}
 
     .then(response => {
 
-
         let readmetext4 = "";
 
         if (response.license === 'Apache License 2.0') {
@@ -192,7 +177,6 @@ The application performs input validations for email and lenghts`;
 
         // ![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)
 
-
         // const bf = new BadgeFactory()
 
         // const format = {
@@ -213,7 +197,6 @@ The application performs input validations for email and lenghts`;
             console.log("Success!");
         });
     })
-
 
     .catch(err => {
         console.log(err);
