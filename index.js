@@ -110,9 +110,9 @@ inquirer
         //console.log(JSON.stringify(response, null, 2));
 
 
-        let readmetext2 = `${github.data.login}
+        let readmetext2 = `*${github.data.login}*
             
-* email = ${promptData.email}
+* email = *${promptData.email}*
         
 * Profile picture:
 
@@ -138,16 +138,15 @@ inquirer
         //console.log("inside 3 param function");
 
         let readmetext3 = `${README_credit} 
-${response.install}
+*${response.install}*
         
 ${README_install}
         
-${response.usage}
+*${response.usage}*
         
 ${README_Usage}
 
->block quote
-${response.license}
+>*${response.license}*
 
 `;
 
