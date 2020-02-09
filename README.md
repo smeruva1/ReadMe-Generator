@@ -5,7 +5,7 @@
 ## 
         
         "---------"
-        adfadfad 
+        afadfad 
         werere
         "---------"
         
@@ -17,13 +17,7 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 
 ## Credit
 
-REPO Username: "smeruva1"
-        email = smeruva@yahoo.com
-        Profile pic
-
-            ![Sudar Meruva](https://avatars3.githubusercontent.com/u/57336110?v=4)
-
-            ## Motivation
+REPO Username: ## Motivation
 
 The motivation is to write code to create the file dynamically and not type it manually. 
 
@@ -55,7 +49,7 @@ It’s a good idea to at least have a README on your project, because it’s the
 ## Installation
         
         "---------"
-        segrsrgr
+        gssdfsfg
         "---------"
         
         package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
@@ -66,7 +60,7 @@ npm install inquirer axios
 ## Usage
         
         "---------"
-        xcvasdfdf
+        wrere
         "---------"
         
         Once you have cloned the REPO and installed dependencies - two npm javaScript liberaries - inquirer axios, run the node application by using above command in gitbash once you are in the directory.
@@ -83,4 +77,10 @@ User will be prompted with series of questions and the answers will be used to g
         ISC
         "---------"
 
-        ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+        "smeruva1"
+        email = smeruva@gmail.com
+        Profile pic
+
+            ![Sudar Meruva](https://avatars3.githubusercontent.com/u/57336110?v=4)
+
+            

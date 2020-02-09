@@ -173,16 +173,16 @@ inquirer
 
         let readmetext4 = "";
 
-        if (response.license = 'Apache License 2.0') {
+        if (response.license === 'Apache License 2.0') {
             readmetext4 = "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)";
         } else if (response.license = 'GNU GPLv3') {
-            readmetext4 = "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
+            readmetext4 === "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
         } else if (response.license = 'MIT') {
-            readmetext4 = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+            readmetext4 === "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
         } else if (response.license = 'ISC') {
-            readmetext4 = "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
+            readmetext4 === "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
         }
-        
+
         //     + README_License + `
 
         // "---------"
