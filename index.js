@@ -64,7 +64,7 @@ inquirer
         //console.log(promptResponse);
 
         //Combine user inputs and other Readme content
-        var readmetext =
+        let readmetext =
             README_header + `
         
         "---------"
@@ -80,7 +80,7 @@ inquirer
             }
             console.log("Success!");
         });
-        
+
         return Promise.resolve(promptResponse);
     })
     //making the then asynch
@@ -113,7 +113,7 @@ inquirer
 
 
 
-        var readmetext2 = JSON.stringify(github.data.login)
+        let readmetext2 = JSON.stringify(github.data.login)
             + `
         `
             + "email = " + `${promptData.email}
@@ -138,7 +138,7 @@ inquirer
 
         //console.log("inside 3 param function");
 
-        var readmetext3 = README_credit + `
+        let readmetext3 = README_credit + `
         
         "---------"
         ${response.install}
@@ -168,28 +168,38 @@ inquirer
         return response;
     })
 
-.then(response => {
-
-    var readmetext4 = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+    .then(response => {
 
 
-    //     + README_License + `
-    
-    // "---------"
-    // "badge"
-    
-    // "[![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)](https://travis-ci.org/rstacruz/REPO) "
-    
-    // "---------"
-    // `+ README_Badge;
+        let readmetext4 = "";
 
-    fs.appendFile("README.md", readmetext4, function (err) {
-        if (err) {
-            return console.log(err);
+        if (response.license = 'Apache License 2.0') {
+            readmetext4 = "![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)";
+        } else if (response.license = 'GNU GPLv3') {
+            readmetext4 = "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
+        } else if (response.license = 'MIT') {
+            readmetext4 = "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
+        } else if (response.license = 'ISC') {
+            readmetext4 = "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
         }
-        console.log("Success!");
-    });
-})
+        
+        //     + README_License + `
+
+        // "---------"
+        // "badge"
+
+        // "[![Status](https://travis-ci.org/rstacruz/REPO.svg?branch=master)](https://travis-ci.org/rstacruz/REPO) "
+
+        // "---------"
+        // `+ README_Badge;
+
+        fs.appendFile("README.md", readmetext4, function (err) {
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Success!");
+        });
+    })
 
 
     .catch(err => {
