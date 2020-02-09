@@ -5,8 +5,8 @@
 ## 
         
         "---------"
-        Prj title 
-        Prj desc
+        padfadfad 
+        adfadfa
         "---------"
         
         Dynamically creating a ReadMe Markdown file using simple styling to format the text and images. The project will be using node.js and two popular javascript libraries - inquirer and axios to get input from user and axios to get data from github using a API call.
@@ -18,8 +18,8 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 ## Credit
 
 REPO Username: "smeruva1"
-        email = meruva_s@yahoo.com
-        Profile pic = "https://avatars3.githubusercontent.com/u/57336110?v=4"## Motivation
+        email = meruva_@yahoo.com
+        Profile pic = ![Sudar Meruva]("https://avatars3.githubusercontent.com/u/57336110?v=4")## Motivation
 
 The motivation is to write code to create the file dynamically and not type it manually. 
 
@@ -51,7 +51,7 @@ It’s a good idea to at least have a README on your project, because it’s the
 ## Installation
         
         "---------"
-        install prj
+        adfadf
         "---------"
         
         package.json file has the dependencies, you will have to clone the repo to your local machine and install two npm javaScript liberaries - inquirer axios by running below commands
@@ -62,7 +62,7 @@ npm install inquirer axios
 ## Usage
         
         "---------"
-        use prj
+        adfadfa
         "---------"
         
         Once you have cloned the REPO and installed dependencies - two npm javaScript liberaries - inquirer axios, run the node application by using above command in gitbash once you are in the directory.
@@ -76,7 +76,7 @@ User will be prompted with series of questions and the answers will be used to g
 
         
         "---------"
-        GNU GPLv3
+        Apache License 2.0
         "---------"
         
         

@@ -3,7 +3,6 @@ const inquirer = require('inquirer');
 //const writeFile = require('./file-util');
 const fs = require('fs');
 const content = require('./content');
-var promptResponseObj;
 
 inquirer
     .prompt([
@@ -61,16 +60,16 @@ inquirer
 
     ]
     )
-    .then(function (promtResponse) {
-        console.log(promtResponse);
+    .then(function (promptResponse) {
+        //console.log(promptResponse);
 
         //Combine user inputs and other Readme content
         var readmetext =
             README_header + `
         
         "---------"
-        ${promtResponse.project} 
-        ${promtResponse.description}
+        ${promptResponse.project} 
+        ${promptResponse.description}
         "---------"
         
         `+ README_desc;
@@ -79,31 +78,48 @@ inquirer
             if (err) {
                 return console.log(err);
             }
-            console.log("Success!");
+            console.log("Success! today is Feb 9th line 82");
         });
-        promptResponseObj = promtResponse;
-        return Promise.resolve(promtResponse);
+        
+        return Promise.resolve(promptResponse);
     })
-    .then(function (promptResponse) {
-        console.log(promptResponse.username);
+    //making the then asynch
+    .then(async function (promptResponse) {
+        //console.log(promptResponse.username);
 
         const queryURL = `https://api.github.com/users/${promptResponse.username}`;
         //return (promptResponse, axios.get(queryURL));
-        return axios.get(queryURL);
+        return {
+            promptData: promptResponse,
+            //add await to wait for it to complete
+            github: await axios.get(queryURL)
+        }
     })
     //.then((promptResponse, githubRresponse) => {
     .then(githubRresponse => {
+
+
+        const { promptData, github } = githubRresponse;
+        console.log("----------------------");
+        console.log(githubRresponse);
+        console.log("----------------------");
+        console.log(promptData);
+        console.log("----------------------");
+        console.log(github);
 
         console.log("inside 2 param function");
         //console.log(githubRresponse.data);
         //console.log(JSON.stringify(response, null, 2));
 
-        var readmetext2 = JSON.stringify(githubRresponse.data.login)
+
+
+        var readmetext2 = JSON.stringify(github.data.login)
             + `
         `
-            + "email = " + `${promptResponseObj.email}
+            + "email = " + `${promptData.email}
         `
-            + "Profile pic = " + JSON.stringify(githubRresponse.data.avatar_url);
+            + "Profile pic = " +
+            `![Sudar Meruva](${JSON.stringify(github.data.avatar_url)})`;
 
         fs.appendFile("README.md", readmetext2, function (err) {
             if (err) {
@@ -112,7 +128,7 @@ inquirer
             console.log("Success!");
         });
 
-        //return promptResponse;;
+        return promptData;
     })
     .then(response => {
 
@@ -121,19 +137,19 @@ inquirer
         var readmetext3 = README_credit + `
         
         "---------"
-        ${promptResponseObj.install}
+        ${response.install}
         "---------"
         
         `+ README_install + `
         
         "---------"
-        ${promptResponseObj.usage}
+        ${response.usage}
         "---------"
         
         `+ README_Usage + `
         
         "---------"
-        ${promptResponseObj.license}
+        ${response.license}
         "---------"
         
         `
