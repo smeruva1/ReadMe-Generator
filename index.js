@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 //const writeFile = require('./file-util');
 const fs = require('fs');
 const content = require('./content');
-const { BadgeFactory } = require('gh-badges')
+//const { BadgeFactory } = require('gh-badges')
 
 inquirer
     .prompt([
@@ -178,9 +178,10 @@ ${README_Usage}
 
         readmetext4 += `${README_License}
 
-![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)
-
+        ![Build Status](https://travis-ci.com/smeruva1/ReadMe-Generator.svg?branch=master)
 `;
+        
+        // ![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)
 
 
 // const bf = new BadgeFactory()
