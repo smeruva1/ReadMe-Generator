@@ -112,11 +112,11 @@ inquirer
 
         let readmetext2 = `*${github.data.login}*
             
-* email = *${promptData.email}*
+>* email = *${promptData.email}*
         
-* Profile picture:
+>* Profile picture:
 
-* ![${github.data.login}](${github.data.avatar_url})
+>* ![${github.data.login}](${github.data.avatar_url})
 
 1 [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
@@ -138,11 +138,11 @@ inquirer
         //console.log("inside 3 param function");
 
         let readmetext3 = `${README_credit} 
-*${response.install}*
+>*${response.install}*
         
 ${README_install}
         
-*${response.usage}*
+>*${response.usage}*
         
 ${README_Usage}
 

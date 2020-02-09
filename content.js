@@ -7,7 +7,7 @@ Its interesting to know that Markdown files use non-alphabetic characters like h
 
 ## Credit
 
-* REPO Username: `;
+>* REPO Username: `;
 
 README_credit = 
 `## Motivation
