@@ -74,21 +74,8 @@ README_License = `
 
 `;
 
-
-README_Badge = `
-
-## Contributing
-
-Feel free to clone the REPO and contribute.
-
-## Tests
-
-The application performs input validations for email and lenghts`;
-
 exports.README_desc;
 exports.README_credit;
 exports.README_install;
 exports.README_Usage;
 exports.README_License;
-exports.README_Badge;
-

@@ -176,28 +176,35 @@ ${README_Usage}
             readmetext4 = "![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)";
         }
 
-        readmetext4 += 
-//         ## Badges
+        readmetext4 += ` 
 
-// ![Build Status](https://travis-ci.com/smeruva1/ReadMe-Generator.svg?branch=master)
-`
-${README_Badge}`;
-        
+## Contributing
+
+Feel free to clone the REPO and contribute.
+
+## Tests
+
+The application performs input validations for email and lenghts`;
+
+        //         ## Badges
+
+        // ![Build Status](https://travis-ci.com/smeruva1/ReadMe-Generator.svg?branch=master)
+
         // ![npm version](http://img.shields.io/npm/v/REPO.svg?style=flat)
 
 
-// const bf = new BadgeFactory()
+        // const bf = new BadgeFactory()
 
-// const format = {
-//   text: ['build', 'passed'],
-//   color: 'green',
-//   template: 'flat',
-// }
+        // const format = {
+        //   text: ['build', 'passed'],
+        //   color: 'green',
+        //   template: 'flat',
+        // }
 
-// const svg = bf.create(format)
-// readmetext4 +=svg;
+        // const svg = bf.create(format)
+        // readmetext4 +=svg;
 
-//${README_Badge}`;
+        //${README_Badge}`;
 
         fs.appendFile("README.md", readmetext4, function (err) {
             if (err) {
