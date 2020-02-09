@@ -78,7 +78,7 @@ inquirer
             if (err) {
                 return console.log(err);
             }
-            console.log("Success! today is Feb 9th line 82");
+            console.log("Success!");
         });
         
         return Promise.resolve(promptResponse);
@@ -100,15 +100,15 @@ inquirer
 
 
         const { promptData, github } = githubRresponse;
-        console.log("----------------------");
-        console.log(githubRresponse);
-        console.log("----------------------");
-        console.log(promptData);
-        console.log("----------------------");
-        console.log(github);
+        // console.log("----------------------");
+        // console.log(githubRresponse);
+        // console.log("----------------------");
+        // console.log(promptData);
+        // console.log("----------------------");
+        // console.log(github);
 
-        console.log("inside 2 param function");
-        //console.log(githubRresponse.data);
+        // console.log("inside 2 param function");
+        // //console.log(githubRresponse.data);
         //console.log(JSON.stringify(response, null, 2));
 
 
@@ -119,7 +119,7 @@ inquirer
             + "email = " + `${promptData.email}
         `
             + "Profile pic = " +
-            `![Sudar Meruva](${JSON.stringify(github.data.avatar_url)})`;
+            `![Sudar Meruva](${github.data.avatar_url})`;
 
         fs.appendFile("README.md", readmetext2, function (err) {
             if (err) {
@@ -132,7 +132,7 @@ inquirer
     })
     .then(response => {
 
-        console.log("inside 3 param function");
+        //console.log("inside 3 param function");
 
         var readmetext3 = README_credit + `
         
